@@ -1,6 +1,8 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>menu</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="Cerrar Sesión"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -13,7 +15,21 @@
     </a>
   </div>
   <p class="ion-text-center">Nombre Apellido</p>
-  <ion-button color="primary" expand="block" shape="round" [routerLink]="['#']">Buscar Viaje</ion-button>
-  <ion-button color="primary" expand="block" shape="round" [routerLink]="['#']">Registrar Viaje</ion-button>
-  <ion-button color="primary" expand="block" shape="round" [routerLink]="['/mis-autos']">Mis Autos</ion-button>
+  <h1 class="ion-text-center" >¡Bienvenido!</h1>
+  <h2 class="ion-text-center">Escoja una opción</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="0.5">
+      </ion-col>
+      <ion-col size="11">
+        <ion-button class="ion-margin-bottom" color="primary" expand="block" shape="round" [routerLink]="['/menu-pasajero']">Ingresar como Pasajero</ion-button>
+        <ion-button class="ion-margin-bottom" color="primary" expand="block" shape="round" [routerLink]="['/menu-conductor']">Ingresar como Conductor</ion-button>
+        <ion-button class="ion-margin-bottom" color="primary" expand="block" shape="round" [routerLink]="['/cuenta']">Mi Cuenta</ion-button>
+      </ion-col>
+      <ion-col size="0.5">
+      </ion-col>
+    </ion-row>
+
+</ion-grid>
+
 </ion-content>

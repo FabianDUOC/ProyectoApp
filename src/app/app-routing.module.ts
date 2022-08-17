@@ -30,6 +30,14 @@ const routes: Routes = [
     path: 'mis-autos',
     loadChildren: () => import('./pages/mis-autos/mis-autos.module').then( m => m.MisAutosPageModule)
   },
+  {
+    path: 'menu-conductor',
+    loadChildren: () => import('./pages/menu-conductor/menu-conductor.module').then( m => m.MenuConductorPageModule)
+  },
+  {
+    path: 'menu-pasajero',
+    loadChildren: () => import('./pages/menu-pasajero/menu-pasajero.module').then( m => m.MenuPasajeroPageModule)
+  },
 
 ];
 

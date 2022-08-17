@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="gradiante ion-text-center">
   <h1>Registro</h1>
   <ion-item>
     <ion-label position="floating">Correo</ion-label>
@@ -29,6 +29,16 @@
     <ion-label position="floating">Repetir contraseña</ion-label>
     <ion-input type="password"></ion-input>
   </ion-item>
-  <ion-button color="primary" expand="block" shape="round" [routerLink]="['/menu']">Registrar</ion-button>
-  <ion-button color="medium" expand="block" shape="round">Borrar</ion-button>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="0.5">
+      </ion-col>
+      <ion-col size="11">
+        <ion-button color="primary" class="ion-margin-bottom" expand="block" shape="round" [routerLink]="['/menu']">Registrar</ion-button>
+        <ion-button color="medium" class="ion-margin-bottom" expand="block" shape="round">Borrar</ion-button>
+      </ion-col>
+      <ion-col size="0.5">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
