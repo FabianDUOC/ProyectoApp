@@ -78,12 +78,12 @@
   --ion-color-dark-tint: #383a3e;
 
   /** medium **/
-  --ion-color-medium: #92949c;
+  --ion-color-medium:linear-gradient(70deg,#787878, #ACACAC);
   --ion-color-medium-rgb: 146, 148, 156;
   --ion-color-medium-contrast: #ffffff;
   --ion-color-medium-contrast-rgb: 255, 255, 255;
-  --ion-color-medium-shade: #808289;
-  --ion-color-medium-tint: #9d9fa6;
+  --ion-color-medium-shade: linear-gradient(70deg,#6a6a6a, #979797);;
+  --ion-color-medium-tint: linear-gradient(70deg,#868686, #b4b4b4);;
 
   /** light **/
   --ion-color-light: #f4f5f8;
