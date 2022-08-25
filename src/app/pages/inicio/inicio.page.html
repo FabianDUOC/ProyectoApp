@@ -8,13 +8,22 @@
   <h1>Hermes</h1>
   <ion-item>
     <ion-label position="floating">Usuario</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="usuario"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Contraseña</ion-label>
-    <ion-input type="password"></ion-input>
+    <ion-input type="password" [(ngModel)]="clave"></ion-input>
   </ion-item>
-  <p [routerLink]="['#']" class="ion-text-center">he olvidado mi contraseña</p>
-  <ion-button class="ion-margin-bottom" color="primary" expand="block" shape="round" [routerLink]="['/menu']">Aceptar</ion-button>
-  <ion-button color="medium" expand="block" shape="round" [routerLink]="['/registro']">Registrarse</ion-button>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="0.5">
+      </ion-col>
+      <ion-col size="11">
+        <p [routerLink]="['#']" class="ion-text-center">he olvidado mi contraseña</p>
+        <ion-button class="ion-margin-bottom" color="primary" expand="block" shape="round" (click)="verifLogin()">Aceptar</ion-button>
+        <ion-button color="medium" expand="block" shape="round" [routerLink]="['/registro']">Registrarse</ion-button></ion-col>
+      <ion-col size="0.5">
+      </ion-col>
+    </ion-row>
+</ion-grid>
 </ion-content>

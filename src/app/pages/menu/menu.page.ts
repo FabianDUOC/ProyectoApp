@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuPage implements OnInit {
 
-  constructor() { }
+  u: string = "";
+  c: string = "";
+
+  constructor(private router: Router, private activedRouter: ActivatedRoute) {
+    this.activedRouter.queryParams.subscribe(params =>{
+      if(this.router.getCurrentNavigation().extras.state){
+        this.u = this.router.getCurrentNavigation().extras.state.u;
+        this.c = this.router.getCurrentNavigation().extras.state.c;
+      }
+      
+    })
+   }
 
   ngOnInit() {
   }
-
+  
 }

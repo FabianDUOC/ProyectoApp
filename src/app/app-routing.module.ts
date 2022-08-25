@@ -18,7 +18,8 @@ const routes: Routes = [
   {
     path: 'menu',
     loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule)
-  },  {
+  },
+  {
     path: 'registro',
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
@@ -38,6 +39,34 @@ const routes: Routes = [
     path: 'menu-pasajero',
     loadChildren: () => import('./pages/menu-pasajero/menu-pasajero.module').then( m => m.MenuPasajeroPageModule)
   },
+  {
+    path: 'recuperar-clave',
+    loadChildren: () => import('./pages/recuperar-clave/recuperar-clave.module').then( m => m.RecuperarClavePageModule)
+  },  {
+    path: 'editar-cuenta',
+    loadChildren: () => import('./pages/editar-cuenta/editar-cuenta.module').then( m => m.EditarCuentaPageModule)
+  },
+  {
+    path: 'cambiar-clave',
+    loadChildren: () => import('./pages/cambiar-clave/cambiar-clave.module').then( m => m.CambiarClavePageModule)
+  },
+  {
+    path: 'nuevo-viaje',
+    loadChildren: () => import('./pages/nuevo-viaje/nuevo-viaje.module').then( m => m.NuevoViajePageModule)
+  },
+  {
+    path: 'ver-viaje',
+    loadChildren: () => import('./pages/ver-viaje/ver-viaje.module').then( m => m.VerViajePageModule)
+  },
+  {
+    path: 'viaje-conductor',
+    loadChildren: () => import('./pages/viaje-conductor/viaje-conductor.module').then( m => m.ViajeConductorPageModule)
+  },
+  {
+    path: 'viaje-pasajero',
+    loadChildren: () => import('./pages/viaje-pasajero/viaje-pasajero.module').then( m => m.ViajePasajeroPageModule)
+  },
+
 
 ];
 
