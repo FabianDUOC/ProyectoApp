@@ -15,6 +15,11 @@ export class RegistroPage implements OnInit {
   clave: string = "";
   clave2: string = "";
 
+  msjCorreo: string = "";
+  msjNombre: string = "";
+  msjApellido: string = "";
+  msjClave: string = "";
+
   constructor(private router: Router, private alertController: AlertController) { }
 
   async alertContraseña() {
@@ -43,21 +48,24 @@ export class RegistroPage implements OnInit {
     await alert.present();
   }
 
-  verifRegistrar(){
+  validarRegistrar(){
+
+    this.msjCorreo = "";
+    this.msjNombre = "";
+    this.msjApellido = "";
+    this.msjClave = "";
 
     if (this.clave.length <= 8 || this.clave != this.clave2){
-      this.alertContraseña();
-      
+      //this.alertContraseña();
+      this.msjClave = "Las contraseñas deben tener al menos 8 caracteres y deben ser iguales"
       }
-    else if (this.correo.includes("@") ==false || this.correo.includes(".") ==false){
-      this.alertCorreo();
-        
+    if (this.correo.indexOf('@', 0) == -1 || this.correo.indexOf('.', 0) == -1){
+      //this.alertCorreo();
+      this.msjCorreo = "Ingrese un correo válido"
       }
-    else{
-      this.alertReg();
-      this.router.navigate(['/inicio']);
-    }
+
   }
+
   ngOnInit() {   
   }
 

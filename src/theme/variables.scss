@@ -4,13 +4,18 @@
 /** Ionic CSS Variables **/
 :root {
   /** general **/
+
+  .alerta{
+    color: rgb(238, 116, 116);
+  }
+
   // clase con el formato de la imagen de perfil de la cuenta
   .imgRedonda {
     width:20vh;
     height:20vh;
     border-radius:15vh;
     border:0.7vh solid #666;
-}
+  }
   // color del fondo general de la APP
   .gradiante{--ion-background-color: linear-gradient(#790969 ,#092779,#094379 , #00acff);
     //--ion-background-color: linear-gradient(#790969 ,#092779,#094379 , #00acff);
@@ -92,6 +97,9 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
 }
+
+
 
  

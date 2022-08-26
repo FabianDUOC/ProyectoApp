@@ -11,20 +11,28 @@ export class InicioPage implements OnInit {
 
   usuario: string = "";
   clave: string = "";
+  mensaje: string ="";
 
   constructor(private router: Router, private alertController: AlertController) { }
 
   async presentAlert() {
     const alert = await this.alertController.create({
-      message: 'Usuario y/o contraseña incorrecta',      
+      message: this.mensaje,      
     });
 
     await alert.present();
   }
 
-  verifLogin(){
+  validarLogin(){
 
-    if (this.usuario == "pepe"){
+    
+     /* 
+    //VALIDACION DE FORMATO CORREO
+    if(this.usuario.indexOf('@', 0) == -1 || this.usuario.indexOf('.', 0) == -1){
+      this.mensaje = "Ingrese un correo electronico válido."
+      this.presentAlert();
+    }
+    else{
       let navigationExtras: NavigationExtras = {
         state:{
           u: this.usuario,
@@ -32,12 +40,10 @@ export class InicioPage implements OnInit {
         }
       }
       this.router.navigate(['/menu'], navigationExtras);
-    }
-    else{
-      this.presentAlert();
-    }
-
-
+    } 
+      */
+    
+    this.router.navigate(['/menu']);
 
   }
 
