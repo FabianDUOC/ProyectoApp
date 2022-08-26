@@ -7,6 +7,33 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="gradiante ion-text-center">
+  <h1>Editar Cuenta</h1>
+  <ion-item>
+    <ion-label position="floating">Correo</ion-label>
+    <ion-input type="email" [(ngModel)]="correo"></ion-input>
+  </ion-item>
+  <p class="alerta" *ngIf = "msjCorreo"> {{ msjCorreo }} </p>
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+  <p class="alerta" *ngIf = "msjNombre"> {{ msjNombre }} </p>
+  <ion-item>
+    <ion-label position="floating">Apellido</ion-label>
+    <ion-input [(ngModel)]="apellido"></ion-input>
+  </ion-item>
+  <p class="alerta" *ngIf = "msjApellido"> {{ msjApellido }} </p>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="0.5">
+      </ion-col>
+      <ion-col size="11">
+        <ion-button color="primary" class="ion-margin-bottom" expand="block" shape="round" (click)="validarEdit()">Editar</ion-button>
+        <ion-button color="medium" class="ion-margin-bottom" expand="block" shape="round">Borrar</ion-button>
+      </ion-col>
+      <ion-col size="0.5">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

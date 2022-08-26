@@ -4,7 +4,11 @@
 /** Ionic CSS Variables **/
 :root {
   /** general **/
-
+  .subrayado{
+    text-align: center;
+    text-decoration: underline;
+    font-weight:750 ;
+  }
   .alerta{
     color: rgb(238, 116, 116);
   }
