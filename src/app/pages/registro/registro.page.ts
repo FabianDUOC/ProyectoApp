@@ -19,6 +19,8 @@ export class RegistroPage implements OnInit {
   msjNombre: string = "";
   msjApellido: string = "";
   msjClave: string = "";
+  msjClave2: string = "";
+  msjCampos: string = "";
 
   constructor(private router: Router, private alertController: AlertController) { }
 
@@ -54,16 +56,48 @@ export class RegistroPage implements OnInit {
     this.msjNombre = "";
     this.msjApellido = "";
     this.msjClave = "";
+    this.msjClave2 = "";
+    this.msjCampos = "";
 
-    if (this.clave.length <= 8 || this.clave != this.clave2){
+    let valido = true;
+
+    if (this.clave.length <= 8){
       //this.alertContraseña();
-      this.msjClave = "Las contraseñas deben tener al menos 8 caracteres y deben ser iguales"
+      this.msjClave = "Las contraseña deben tener al menos 8 caracteres"
+      valido = false;
       }
+    if(this.clave != this.clave2){
+      this.msjClave2 = "Las contraseña deben ser iguales"
+      valido = false;
+    }
     if (this.correo.indexOf('@', 0) == -1 || this.correo.indexOf('.', 0) == -1){
       //this.alertCorreo();
       this.msjCorreo = "Ingrese un correo válido"
+      valido = false;
       }
+    if(!this.correo || !this.nombre || !this.apellido || !this.clave || !this.clave2){
+      this.msjCampos = "No debe dejar campos vacíos"
+      valido = false;
+    }
 
+    if(valido){
+      this.router.navigate(['/menu'])
+    }
+  }
+
+  borrar(){
+    this.correo = "";
+    this.nombre = "";
+    this.apellido = "";
+    this.clave = "";
+    this.clave2 = "";
+
+    this.msjCorreo = "";
+    this.msjNombre = "";
+    this.msjApellido = "";
+    this.msjClave = "";
+    this.msjClave2 = "";
+    this.msjCampos = "";
   }
 
   ngOnInit() {   
