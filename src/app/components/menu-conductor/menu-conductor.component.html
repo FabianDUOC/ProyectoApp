@@ -1,0 +1,18 @@
+<ion-content class="gradiante">
+  <h1 class="ion-text-center" >¡Bienvenido Conductor!</h1>
+  <h2 class="ion-text-center">Escoja una opción</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="0.5">
+      </ion-col>
+      <ion-col size="11">
+        <ion-button class="ion-margin-bottom ion-margin-top" color="primary" expand="block" shape="round" [routerLink]="['../pages/nuevo-viaje']">Nuevo Viaje</ion-button>
+        <ion-button class="ion-margin-bottom" color="primary" expand="block" shape="round" [routerLink]="['../pages/viaje-conductor']">Viajes Registrados</ion-button>
+        <ion-button class="ion-margin-bottom" color="primary" expand="block" shape="round" [routerLink]="['../pages/mis-autos']">Mis Autos</ion-button>
+      </ion-col>
+      <ion-col size="0.5">
+      </ion-col>
+    </ion-row>
+
+</ion-grid>
+</ion-content>
