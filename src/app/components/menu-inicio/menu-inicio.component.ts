@@ -10,8 +10,8 @@ export class MenuInicioComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  menuPasajero() {
-    this.router.navigate(['../pages/menu/menuPasajero']);
+  goMenuPasajero() {
+    this.router.navigate(['/inicio']);
   }
 
   ngOnInit() {}
