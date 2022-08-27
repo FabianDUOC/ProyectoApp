@@ -31,7 +31,11 @@
   ion-item{
     --ion-background-color: 
   }
+  ion-list{
+    --ion-background-color: 
+  }
 
+  //--ion-color-toolbar: linear-gradient(#790938 ,#790969);
   /** primary **/
   --ion-color-primary: linear-gradient(70deg,#017df1, #28ddfd);
   --ion-color-primary-contrast: #ffffff;
@@ -39,7 +43,7 @@
   --ion-color-primary-tint: linear-gradient(90deg,#1a8af2, #3ee0fd);
 
   /** secondary **/
-  --ion-color-secondary: #3dc2ff;
+  --ion-color-secondary: linear-gradient(#790938 ,#790969);
   --ion-color-secondary-rgb: 61, 194, 255;
   --ion-color-secondary-contrast: #ffffff;
   --ion-color-secondary-contrast-rgb: 255, 255, 255;
