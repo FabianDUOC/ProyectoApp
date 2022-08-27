@@ -61,7 +61,7 @@ export class RegistroPage implements OnInit {
 
     let valido = true;
 
-    if (this.clave.length <= 8){
+    if (this.clave.length < 8){
       //this.alertContraseña();
       this.msjClave = "Las contraseña deben tener al menos 8 caracteres"
       valido = false;

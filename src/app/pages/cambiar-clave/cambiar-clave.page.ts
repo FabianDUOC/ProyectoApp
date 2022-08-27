@@ -39,9 +39,9 @@ export class CambiarClavePage implements OnInit {
     this.msjClave = "";
 
 
-    if (this.clave.length <= 8 || this.claveNew.length <= 8 || this.claveNew != this.claveNew2){
+    if (this.clave.length < 8 || this.claveNew.length < 8 || this.claveNew != this.claveNew2){
       //this.alertContraseña();
-      this.msjClave = "Las contraseñas deben tener mas de 8 caracteres y las contraseñas nuevas deben ser iguales"
+      this.msjClave = "Las contraseña deben tener al menos 8 caracteres y las contraseñas nuevas deben ser iguales"
       }
     else if(this.clave == this.claveNew){
       //this.alertCorreo();
