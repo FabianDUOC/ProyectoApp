@@ -1,6 +1,5 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>cambiarClave</ion-title>
     <ion-buttons slot="start">
       <ion-back-button text=""></ion-back-button>
     </ion-buttons>
@@ -9,7 +8,7 @@
 
 <ion-content>
   <ion-content class="gradiante ion-text-center">
-    <h1>Editar Cuenta</h1>
+    <h1>Cambiar Contraseña</h1>
     <ion-item>
       <ion-label position="floating">Contraseña Actual</ion-label>
       <ion-input type="password" [(ngModel)]="clave"></ion-input>
@@ -37,3 +36,20 @@
     </ion-grid>
   </ion-content>
 </ion-content>
+
+<!-- footer con menu de barra -->
+<ion-footer>
+  <ion-toolbar>
+    <ion-segment (ionChange)="segmentChanged($event)" value="">
+      <ion-segment-button value="menuPasajero">
+        <ion-icon name="accessibility-outline"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="miCuenta">
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="menuConductor">
+        <ion-icon name="car-sport-outline"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-footer>

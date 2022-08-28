@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -52,6 +52,18 @@ export class CambiarClavePage implements OnInit {
         this.router.navigate(['/cuenta']);
       }
 
+  }
+
+  // Seleccion del Menu Footer
+  segmentChanged($event) {
+    let direccion = $event.detail.value;
+
+    let navigationExtras: NavigationExtras = {
+      state:{
+        selectMenu: direccion,
+      }
+    }
+    this.router.navigate(['menu/' + direccion],navigationExtras);
   }
 
   ngOnInit() {   
