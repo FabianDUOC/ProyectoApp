@@ -66,6 +66,10 @@ const routes: Routes = [
     path: 'viaje-pasajero',
     loadChildren: () => import('./pages/viaje-pasajero/viaje-pasajero.module').then( m => m.ViajePasajeroPageModule)
   },
+  {
+    path: 'editar-auto',
+    loadChildren: () => import('./pages/editar-auto/editar-auto.module').then( m => m.EditarAutoPageModule)
+  },
 
 
 ];
