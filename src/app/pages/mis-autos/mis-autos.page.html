@@ -19,8 +19,15 @@
     <ion-card-content>
       Patente: xyxy-98
     </ion-card-content>
-    <ion-button class="ion-margin-bottom" color="medium" expand="block" shape="round" [routerLink]="['/editar-auto']">Editar</ion-button>
-    <ion-button class="ion-margin-bottom" color="danger" expand="block" shape="round" [routerLink]="['/editar-auto']">Eliminar</ion-button>
+    <ion-row> 
+      <ion-col>
+      <ion-button class="ion-margin-bottom" color="medium" expand="block" shape="round" [routerLink]="['/editar-auto']">Editar</ion-button>
+      </ion-col>
+      <ion-col>
+      <ion-button class="ion-margin-bottom" color="danger" expand="block" shape="round" [routerLink]="['/editar-auto']">Eliminar</ion-button>
+    </ion-col>
+    </ion-row>
+   
   </ion-card>
   <ion-grid>
     <ion-row>
