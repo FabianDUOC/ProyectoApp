@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -17,6 +17,18 @@ export class NuevoViajePage implements OnInit {
   asientos: number = null;
 
   constructor(private router: Router, private alertController: AlertController) { }
+
+  // Seleccion del Menu Footer
+  segmentChanged($event) {
+    let direccion = $event.detail.value;
+
+    let navigationExtras: NavigationExtras = {
+      state:{
+        selectMenu: direccion,
+      }
+    }
+    this.router.navigate(['menu/' + direccion],navigationExtras);
+  }
 
   async alertReg() {
     const alert = await this.alertController.create({

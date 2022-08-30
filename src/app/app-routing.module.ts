@@ -70,6 +70,10 @@ const routes: Routes = [
     path: 'editar-auto',
     loadChildren: () => import('./pages/editar-auto/editar-auto.module').then( m => m.EditarAutoPageModule)
   },
+  {
+    path: 'buscar-viaje',
+    loadChildren: () => import('./pages/buscar-viaje/buscar-viaje.module').then( m => m.BuscarViajePageModule)
+  },
 
 
 ];
