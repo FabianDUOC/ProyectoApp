@@ -8,6 +8,8 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class BuscarViajePage implements OnInit {
 
+  sede: string = "";
+
   constructor(private router: Router) { }
 
     // Seleccion del Menu Footer
@@ -20,6 +22,21 @@ export class BuscarViajePage implements OnInit {
         }
       }
       this.router.navigate(['menu/' + direccion],navigationExtras);
+    }
+
+    buscarViaje(){
+      if (this.sede){
+        let navigationExtras: NavigationExtras = {
+          state:{
+            s: this.sede,
+          }
+        }
+        this.router.navigate(['/ver-viaje'],navigationExtras);
+      }
+      else{
+        
+      } 
+      
     }
 
   ngOnInit() {
