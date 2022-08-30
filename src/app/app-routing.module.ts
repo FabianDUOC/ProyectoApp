@@ -6,11 +6,11 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
-  {
+  /*{
     path: '',
     redirectTo: 'inicio',
     pathMatch: 'full'
-  },
+  },*/
   {
     path: 'inicio',
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
@@ -42,7 +42,8 @@ const routes: Routes = [
   {
     path: 'recuperar-clave',
     loadChildren: () => import('./pages/recuperar-clave/recuperar-clave.module').then( m => m.RecuperarClavePageModule)
-  },  {
+  },
+  {
     path: 'editar-cuenta',
     loadChildren: () => import('./pages/editar-cuenta/editar-cuenta.module').then( m => m.EditarCuentaPageModule)
   },
@@ -73,6 +74,10 @@ const routes: Routes = [
   {
     path: 'buscar-viaje',
     loadChildren: () => import('./pages/buscar-viaje/buscar-viaje.module').then( m => m.BuscarViajePageModule)
+  },
+  {
+    path: 'splash',
+    loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
   },
 
 
