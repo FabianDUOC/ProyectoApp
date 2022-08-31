@@ -8,17 +8,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class MenuPage implements OnInit {
 
-  u: string = "";
-  c: string = "";
+  u:any ;
   selectMenu: string = "";
 
   constructor(private router: Router, private activedRouter: ActivatedRoute) {
     this.activedRouter.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.u = this.router.getCurrentNavigation().extras.state.u;
-        this.c = this.router.getCurrentNavigation().extras.state.c;
         this.selectMenu = this.router.getCurrentNavigation().extras.state.selectMenu;
       }
+      console.log(this.u)
 
     })
 
