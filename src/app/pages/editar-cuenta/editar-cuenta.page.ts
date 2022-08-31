@@ -16,6 +16,9 @@ export class EditarCuentaPage implements OnInit {
   msjCorreo: string = "";
   msjNombre: string = "";
   msjApellido: string = "";
+  imagen: any;
+  noImagen: boolean = true;
+  
 
   constructor(private router: Router, private alertController: AlertController) { }
 
@@ -54,6 +57,27 @@ export class EditarCuentaPage implements OnInit {
       }
     }
     this.router.navigate(['menu/' + direccion],navigationExtras);
+  }
+
+
+
+ 
+
+  onChange(event) {
+    var reader = new FileReader();
+
+    reader.onload = (event: any) => {
+      this.imagen = event.target.result;
+      console.log("imagen cargada");
+      this.noImagen = false;
+    };
+
+    reader.onerror = (event: any) => {
+      console.log("El archivo no se pudo cargar " + event.target.error.code);
+    };
+
+    reader.readAsDataURL(event.target.files[0]);
+
   }
 
   ngOnInit() {   
