@@ -9,9 +9,28 @@ import { AlertController } from '@ionic/angular';
 })
 export class InicioPage implements OnInit {
 
-  usuario: string = "";
+  correo: string = "";
   clave: string = "";
   mensaje: string ="";
+
+  usuario:any =[
+    {
+      nombre:"",
+      apellido: "",
+      correo:"",
+      telefono:"",
+    }
+  ]
+
+  autos:any = [
+    {
+     patente:"",
+     marca:"",
+     modelo:"",
+     asiento:"", 
+    }
+  ]
+
 
   constructor(private router: Router, private alertController: AlertController) { }
 
@@ -23,29 +42,53 @@ export class InicioPage implements OnInit {
     await alert.present();
   }
 
-  validarLogin(){
+  
+  validaCorreo() {
 
-    
-     /* 
-    //VALIDACION DE FORMATO CORREO
-    if(this.usuario.indexOf('@', 0) == -1 || this.usuario.indexOf('.', 0) == -1){
-      this.mensaje = "Ingrese un correo electronico válido."
+    var valid = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+[.]+[a-zA-Z0-9-]/;
+  
+    if (this.correo.match(valid)) {
+      this.login()
+    } else {
+      this.mensaje = "Ingrese un correo y/o contraseña válidos."
       this.presentAlert();
     }
-    else{
+  }
+
+
+/*   login(){
+    let navigationExtras: NavigationExtras = {
+      state:{
+        u: this.correo,
+        c: this.clave
+      }
+    }
+    this.router.navigate(['/menu'], navigationExtras);
+  } */
+
+
+  login(){
+    if(this.correo == "juan@contacto.cl"){
+      this.usuario.nombre = "Juan";
+      this.usuario.apellido = "Perez";
+      this.usuario.correo = this.correo;
+      this.usuario.telefono = "123456789";
       let navigationExtras: NavigationExtras = {
         state:{
           u: this.usuario,
-          c: this.clave
         }
       }
+      console.log(this.usuario)
+      console.log(navigationExtras);
       this.router.navigate(['/menu'], navigationExtras);
-    } 
-      */
-    
-    this.router.navigate(['/menu']);
 
+    }
+    else{
+      this.mensaje = "Ingrese un correo y/o contraseña válidos."
+      this.presentAlert();
+    }
   }
+
 
   ngOnInit() {
   }
