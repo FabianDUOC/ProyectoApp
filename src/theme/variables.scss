@@ -29,6 +29,15 @@
     border-radius:15vh;
     border:0.7vh solid #666;
   }
+
+  // clase con el formato de la imagen de viajes
+  .imgRedonda2 {
+    width:11vh;
+    height:11vh;
+    border-radius:7vh;
+    border:0.5vh solid #666;
+  }
+
   // color del fondo general de la APP
   .gradiante{--ion-background-color: linear-gradient(#790969 ,#092779,#094379 , #00acff);
     //--ion-background-color: linear-gradient(#790969 ,#092779,#094379 , #00acff);
