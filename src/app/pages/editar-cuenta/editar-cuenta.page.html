@@ -10,11 +10,10 @@
   <div class="ion-margin-top">
     <h1 class="satisfy">Editar Cuenta</h1>
   </div>
-  <ion-item>
     <img class="imgRedonda" *ngIf="noImagen" src="../../../assets/profile_.png" alt="">
     <img class="imgRedonda" *ngIf="imagen" [src]="imagen" alt="">
     <ion-input  (change)="onChange($event)" type="file" accept="image/png, image/jpeg" ></ion-input>
-  </ion-item>
+  <div class="container">
   <ion-item>
     <ion-label position="floating">Correo</ion-label>
     <ion-input type="email" [(ngModel)]="correo"></ion-input>
@@ -35,6 +34,7 @@
     <ion-input type="number" [(ngModel)]="telefono"></ion-input>
   </ion-item>
   <p class="alerta" *ngIf = "msjTelefono"> {{ msjTelefono }} </p>
+</div>
   <ion-grid>
     <ion-row>
       <ion-col size="0.5">
