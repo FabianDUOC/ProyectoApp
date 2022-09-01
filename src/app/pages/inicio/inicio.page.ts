@@ -44,7 +44,7 @@ export class InicioPage implements OnInit {
 
   
   validaCorreo() {
-/* 
+ 
     var valid = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+[.]+[a-zA-Z0-9-]/;
   
     if (this.correo.match(valid)) {
@@ -53,12 +53,13 @@ export class InicioPage implements OnInit {
       this.mensaje = "Ingrese un correo y/o contraseña válidos."
       this.presentAlert();
     }
-     */
-    this.router.navigate(['/menu']);
+     
+    //this.router.navigate(['/menu']);
   }
 
 
-/*   login(){
+  /*   
+  login(){
     let navigationExtras: NavigationExtras = {
       state:{
         u: this.correo,
@@ -66,7 +67,8 @@ export class InicioPage implements OnInit {
       }
     }
     this.router.navigate(['/menu'], navigationExtras);
-  } */
+  } 
+  */
 
 
   login(){
@@ -80,8 +82,6 @@ export class InicioPage implements OnInit {
           u: this.usuario,
         }
       }
-      console.log(this.usuario)
-      console.log(navigationExtras);
       this.router.navigate(['/menu'], navigationExtras);
 
     }

@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { MenuPageRoutingModule } from './menu-routing.module';
 
 import { MenuPage } from './menu.page';
+import { MiCuentaComponent } from 'src/app/components/mi-cuenta/mi-cuenta.component';
+import { MenuPasajeroComponent } from 'src/app/components/menu-pasajero/menu-pasajero.component';
+import { MenuConductorComponent } from 'src/app/components/menu-conductor/menu-conductor.component';
 
 @NgModule({
   imports: [
@@ -15,6 +18,6 @@ import { MenuPage } from './menu.page';
     IonicModule,
     MenuPageRoutingModule
   ],
-  declarations: [MenuPage]
+  declarations: [MenuPage, MiCuentaComponent, MenuPasajeroComponent, MenuConductorComponent]
 })
 export class MenuPageModule {}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -8,25 +8,36 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class MenuPage implements OnInit {
 
-  u:any ;
+  user:any;
   selectMenu: string = "";
 
   constructor(private router: Router, private activedRouter: ActivatedRoute) {
     this.activedRouter.queryParams.subscribe(params => {
-      if (this.router.getCurrentNavigation().extras.state) {
-        this.u = this.router.getCurrentNavigation().extras.state.u;
+      if (this.router.getCurrentNavigation().extras.state.u) {
+        this.user = this.router.getCurrentNavigation().extras.state.u;
+        let navigationExtras: NavigationExtras = {
+          state:{
+            u: this.user,
+          }
+        }
+        this.router.navigate(['menu/miCuenta'], navigationExtras);
+      }
+      if (this.router.getCurrentNavigation().extras.state.selectMenu) {
         this.selectMenu = this.router.getCurrentNavigation().extras.state.selectMenu;
       }
-      console.log(this.u)
-
     })
 
-    this.router.navigate(['menu/miCuenta']);
+    //this.router.navigate(['menu/miCuenta']);
   }
 
   segmentChanged($event) {
     let direccion = $event.detail.value;
-    this.router.navigate(['menu/' + direccion]);
+    let navigationExtras: NavigationExtras = {
+      state:{
+        u: this.user,
+      } 
+    }
+    this.router.navigate(['menu/' + direccion],navigationExtras);
   }
 
   ngOnInit() {

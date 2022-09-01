@@ -30,7 +30,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [MiCuentaComponent, MenuPasajeroComponent, MenuConductorComponent],
+  //declarations: [MiCuentaComponent, MenuPasajeroComponent, MenuConductorComponent],
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
