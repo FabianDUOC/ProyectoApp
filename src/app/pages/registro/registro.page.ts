@@ -29,6 +29,16 @@ export class RegistroPage implements OnInit {
   msjClave5: string = "";
   msjCampos: string = "";
 
+  //Para pasar datos al menu principal
+  usuario:any =[
+    {
+      nombre:"",
+      apellido: "",
+      correo:"",
+      telefono:"",
+    }
+  ]
+
   constructor(private router: Router, private alertController: AlertController) { }
 
   async alertReg() {
@@ -109,7 +119,18 @@ export class RegistroPage implements OnInit {
     }
 
     if(valido){
-      this.router.navigate(['menu/miCuenta']);
+
+      this.usuario.nombre = this.nombre;
+      this.usuario.apellido = this.apellido;
+      this.usuario.correo = this.correo;
+      this.usuario.telefono = this.telefono;
+      let navigationExtras: NavigationExtras = {
+        state:{
+          u: this.usuario,
+        }
+      }
+
+      this.router.navigate(['/menu'], navigationExtras);
       this.alertReg();
     }
 
