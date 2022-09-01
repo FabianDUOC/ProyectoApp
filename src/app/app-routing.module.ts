@@ -82,6 +82,10 @@ const routes: Routes = [
     path: 'agregar-auto',
     loadChildren: () => import('./pages/agregar-auto/agregar-auto.module').then( m => m.AgregarAutoPageModule)
   },
+  {
+    path: 'direccion-nv',
+    loadChildren: () => import('./pages/direccion-nv/direccion-nv.module').then( m => m.DireccionNVPageModule)
+  },
 
 
 
