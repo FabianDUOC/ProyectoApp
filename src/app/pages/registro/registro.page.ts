@@ -8,7 +8,8 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./registro.page.scss'],
 })
 export class RegistroPage implements OnInit {
-
+  hide = true;
+  hide2 = true;
   correo: string = "";
   nombre: string = "";
   apellido: string = "";
@@ -62,7 +63,7 @@ export class RegistroPage implements OnInit {
     }
 
     if(this.clave){
-      if (this.clave.length > 8){
+      if (this.clave.length < 8){
         this.msjClave1 = "La contraseña deben tener al menos 8 caracteres"
         valido = false;
       }

@@ -8,6 +8,10 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./cambiar-clave.page.scss'],
 })
 export class CambiarClavePage implements OnInit {
+  hide = true;
+  hide2 = true;
+  hide3 = true;
+
   clave: string = "";
   claveNew: string = "";
   claveNew2: string = "";
@@ -54,13 +58,14 @@ export class CambiarClavePage implements OnInit {
       if(this.clave == this.claveNew){
         //this.alertCorreo();
         this.msjClave = "La contraseña nueva no puede ser igual a la actual"
+        valido = false;
         }      
       if(this.claveNew != this.claveNew2){
         this.msjClave2 = "Las contraseñas nuevas deben ser iguales"
         valido = false;
       }
       if(this.clave){
-        if (this.clave.length > 8){
+        if (this.clave.length < 8){
           this.msjClave1 = "La contraseña nueva deben tener al menos 8 caracteres"
           valido = false;
         }

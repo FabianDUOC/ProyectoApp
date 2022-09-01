@@ -31,14 +31,24 @@
     <ion-input type="number" [(ngModel)]="telefono"></ion-input>
   </ion-item>
   <p class="alerta" *ngIf = "msjTelefono"> {{ msjTelefono }} </p>
-  <ion-item>
-    <ion-label position="floating">Contraseña</ion-label>
-    <ion-input type="password" [(ngModel)]="clave"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Repetir contraseña</ion-label>
-    <ion-input type="password" [(ngModel)]="clave2"></ion-input>
-  </ion-item>
+
+
+
+  <mat-form-field appearance="fill" [color]="warn">
+    <mat-label>Contraseña</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="clave" >
+    <button style="background-color: transparent;" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" [color]="warn">
+    <mat-label>Repetir Contraseña</mat-label>
+    <input matInput [type]="hide2 ? 'password' : 'text'" [(ngModel)]="clave2" >
+    <button style="background-color: transparent;" mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
   <p class="alerta" *ngIf = "msjClave1"> {{ msjClave1 }} </p>
   <p class="alerta" *ngIf = "msjClave2"> {{ msjClave2 }} </p>
   <p class="alerta" *ngIf = "msjClave2"> {{ msjClave3 }} </p>
