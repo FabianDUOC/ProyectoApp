@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-ver-viaje',
@@ -8,12 +9,14 @@ import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 })
 export class VerViajePage implements OnInit {
 
-  s : string = "";
+  sede : string = "";
+  viaje:any;
 
-  constructor(private router: Router, private activedRouter: ActivatedRoute) {
+  constructor(private router: Router, private activedRouter: ActivatedRoute, private alertController: AlertController) {
     this.activedRouter.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
-        this.s = this.router.getCurrentNavigation().extras.state.s;
+        this.sede = this.router.getCurrentNavigation().extras.state.s;
+        this.viaje = this.router.getCurrentNavigation().extras.state.v;
       }
 
     })
@@ -29,6 +32,18 @@ export class VerViajePage implements OnInit {
       }
     }
     this.router.navigate(['menu/' + direccion],navigationExtras);
+  }
+
+  reservar(){
+    this.router.navigate(['menu/menuPasajero']);
+    this.alertReserva();
+  }
+
+  async alertReserva() {
+    const alert = await this.alertController.create({
+      message: 'Viaje reservado',      
+    });
+    await alert.present();
   }
 
   ngOnInit() {

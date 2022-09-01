@@ -24,14 +24,13 @@ export class RecuperarClavePage implements OnInit {
     await alert.present();
   }
 
-  async alertReg() {
+  async alertRec() {
     const alert = await this.alertController.create({
-      message: 'Solicitud Registrada Correctamente',      
+      message: 'Solicitud enviada <br> correctamente',      
     });
-  
-
     await alert.present();
   }
+  
 
   validarRegistrar(){
 
@@ -39,14 +38,24 @@ export class RecuperarClavePage implements OnInit {
     this.msjCampos = "";
 
     let valido = true;
-
-    if (this.correo.indexOf('@', 0) == -1 || this.correo.indexOf('.', 0) == -1){
-      //this.alertCorreo();
-      this.msjCorreo = "Ingrese un correo válido"
-      valido = false;
-      }
+    
+    valido = this.validarCorreo();
+    
     if(valido){
       this.router.navigate(['/inicio'])
+      this.alertRec();
+    }
+  }
+
+  validarCorreo() {
+ 
+    var valid = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+[.]+[a-zA-Z0-9-]/;
+  
+    if (this.correo.match(valid)) {
+      return true;
+    } else {
+      this.msjCorreo = "Ingrese un correo válido"
+      return false;
     }
   }
 

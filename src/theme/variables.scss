@@ -34,8 +34,16 @@
     border:0.7vh solid #666;
   }
 
-  // clase con el formato de la imagen de viajes
+  // clase con el formato de buscar viaje
   .imgRedonda2 {
+    width:15vh;
+    height:15vh;
+    border-radius:10vh;
+    border:0.7vh solid #666;
+  }
+
+  // clase con el formato de ver/cancelar viaje
+  .imgRedonda3 {
     width:11vh;
     height:11vh;
     border-radius:7vh;
