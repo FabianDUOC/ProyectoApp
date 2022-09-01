@@ -27,7 +27,6 @@ export class MenuPage implements OnInit {
   segmentChanged($event) {
     let direccion = $event.detail.value;
     this.router.navigate(['menu/' + direccion]);
-
   }
 
   ngOnInit() {

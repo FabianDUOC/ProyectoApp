@@ -26,6 +26,11 @@
   </ion-item>
   <p class="alerta" *ngIf = "msjApellido"> {{ msjApellido }} </p>
   <ion-item>
+    <ion-label position="floating">Teléfono contacto</ion-label>
+    <ion-input type="number" [(ngModel)]="telefono"></ion-input>
+  </ion-item>
+  <p class="alerta" *ngIf = "msjTelefono"> {{ msjTelefono }} </p>
+  <ion-item>
     <ion-label position="floating">Contraseña</ion-label>
     <ion-input type="password" [(ngModel)]="clave"></ion-input>
   </ion-item>
@@ -33,8 +38,11 @@
     <ion-label position="floating">Repetir contraseña</ion-label>
     <ion-input type="password" [(ngModel)]="clave2"></ion-input>
   </ion-item>
-  <p class="alerta" *ngIf = "msjClave"> {{ msjClave }} </p>
+  <p class="alerta" *ngIf = "msjClave1"> {{ msjClave1 }} </p>
   <p class="alerta" *ngIf = "msjClave2"> {{ msjClave2 }} </p>
+  <p class="alerta" *ngIf = "msjClave2"> {{ msjClave3 }} </p>
+  <p class="alerta" *ngIf = "msjClave2"> {{ msjClave4 }} </p>
+  <p class="alerta" *ngIf = "msjClave2"> {{ msjClave5 }} </p>
   <p class="alerta" *ngIf = "msjCampos"> {{ msjCampos }} </p>
   <ion-grid>
     <ion-row>

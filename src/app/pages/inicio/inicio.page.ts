@@ -44,7 +44,7 @@ export class InicioPage implements OnInit {
 
   
   validaCorreo() {
-
+/* 
     var valid = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+[.]+[a-zA-Z0-9-]/;
   
     if (this.correo.match(valid)) {
@@ -53,6 +53,8 @@ export class InicioPage implements OnInit {
       this.mensaje = "Ingrese un correo y/o contraseña válidos."
       this.presentAlert();
     }
+     */
+    this.router.navigate(['/menu']);
   }
 
 

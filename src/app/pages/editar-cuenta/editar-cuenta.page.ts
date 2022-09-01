@@ -12,10 +12,13 @@ export class EditarCuentaPage implements OnInit {
   correo: string = "";
   nombre: string = "";
   apellido: string = "";
+  telefono: number;
 
   msjCorreo: string = "";
   msjNombre: string = "";
   msjApellido: string = "";
+  msjTelefono: string = "";
+
   imagen: any;
   noImagen: boolean = true;
   
@@ -37,6 +40,7 @@ export class EditarCuentaPage implements OnInit {
     this.msjCorreo = "";
     this.msjNombre = "";
     this.msjApellido = "";
+    this.msjTelefono = "";
 
     if (this.correo.indexOf('@', 0) == -1 || this.correo.indexOf('.', 0) == -1){
       //this.alertCorreo();
@@ -62,7 +66,7 @@ export class EditarCuentaPage implements OnInit {
 
 
  
-
+  // Cambiar Imagen Perfil
   onChange(event) {
     var reader = new FileReader();
 

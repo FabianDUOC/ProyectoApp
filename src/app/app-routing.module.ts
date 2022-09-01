@@ -78,7 +78,11 @@ const routes: Routes = [
   {
     path: 'splash',
     loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
+  },  {
+    path: 'agregar-auto',
+    loadChildren: () => import('./pages/agregar-auto/agregar-auto.module').then( m => m.AgregarAutoPageModule)
   },
+
 
 
 ];
