@@ -25,6 +25,11 @@
     <ion-input type="password" [(ngModel)]="claveNew2"></ion-input>
   </ion-item>
   <p class="alerta" *ngIf = "msjClave"> {{ msjClave }} </p>
+  <p class="alerta" *ngIf = "msjClave1"> {{ msjClave1 }} </p>
+  <p class="alerta" *ngIf = "msjClave2"> {{ msjClave2 }} </p>
+  <p class="alerta" *ngIf = "msjClave3"> {{ msjClave3 }} </p>
+  <p class="alerta" *ngIf = "msjClave4"> {{ msjClave4 }} </p>
+  <p class="alerta" *ngIf = "msjClave5"> {{ msjClave5 }} </p>
 </div>
   <ion-grid>
     <ion-row>
@@ -32,7 +37,7 @@
       </ion-col>
       <ion-col size="11">
         <ion-button color="primary" class="ion-margin-bottom" expand="block" shape="round" (click)="validarClave()">Editar</ion-button>
-        <ion-button color="medium" class="ion-margin-bottom" expand="block" shape="round">Borrar</ion-button>
+        <ion-button color="medium" class="ion-margin-bottom" expand="block" shape="round" (click)="borrar()">Borrar</ion-button>
       </ion-col>
       <ion-col size="0.5">
       </ion-col>

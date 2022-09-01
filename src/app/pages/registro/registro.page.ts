@@ -62,12 +62,11 @@ export class RegistroPage implements OnInit {
     }
 
     if(this.clave){
-      if (this.clave.length < 8){
+      if (this.clave.length > 8){
         this.msjClave1 = "La contraseña deben tener al menos 8 caracteres"
         valido = false;
       }
     }
-    
     if(this.clave != this.clave2){
       this.msjClave2 = "Las contraseñas deben ser iguales"
       valido = false;
