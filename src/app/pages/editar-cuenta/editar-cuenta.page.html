@@ -34,6 +34,7 @@
     <ion-input type="number" [(ngModel)]="telefono"></ion-input>
   </ion-item>
   <p class="alerta" *ngIf = "msjTelefono"> {{ msjTelefono }} </p>
+  <p class="alerta" *ngIf = "msjCampos"> {{ msjCampos }} </p>
 </div>
   <ion-grid>
     <ion-row>
@@ -41,7 +42,7 @@
       </ion-col>
       <ion-col size="11">
         <ion-button color="primary" class="ion-margin-bottom" expand="block" shape="round" (click)="validarEdit()">Editar</ion-button>
-        <ion-button color="medium" class="ion-margin-bottom" expand="block" shape="round">Borrar</ion-button>
+        <ion-button color="medium" class="ion-margin-bottom" expand="block" shape="round" (click)="borrarEdit()">Borrar</ion-button>
       </ion-col>
       <ion-col size="0.5">
       </ion-col>

@@ -6,14 +6,14 @@
   </div>
   <h1 class="ion-text-center satisfy" >¡Bienvenido!</h1>
   <p class="ion-text-center">{{ usuario.nombre }} {{ usuario.apellido }}</p>
-  <p class="ion-text-center">{{ usuario.correo }}</p>
-  <p class="ion-text-center">{{ usuario.telefono }}</p>
+  <p class="ion-text-center">Correo: {{ usuario.correo }}</p>
+  <p class="ion-text-center">Número Contacto: {{ usuario.telefono }}</p>
   <ion-grid>
     <ion-row>
       <ion-col size="0.5">
       </ion-col>
       <ion-col size="11">
-        <ion-button class="ion-margin-bottom" color="primary" expand="block" shape="round" [routerLink]="['/editar-cuenta']">Editar</ion-button>
+        <ion-button class="ion-margin-bottom" color="primary" expand="block" shape="round" (click)="irEditar()">Editar</ion-button>
         <ion-button class="ion-margin-bottom" color="primary" expand="block" shape="round" [routerLink]="['/cambiar-clave']">Cambiar Contraseña</ion-button>
         <ion-button class="ion-margin-bottom" color="primary" expand="block" shape="round" [routerLink]="['/mis-autos']">Mis Autos</ion-button>
       </ion-col>

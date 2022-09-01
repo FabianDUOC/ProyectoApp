@@ -12,7 +12,8 @@ export class RegistroPage implements OnInit {
   correo: string = "";
   nombre: string = "";
   apellido: string = "";
-  telefono: string = "";
+  telefono: number = null;
+  telefono2: string = "";
   clave: string = "";
   clave2: string = "";
 
@@ -29,29 +30,17 @@ export class RegistroPage implements OnInit {
 
   constructor(private router: Router, private alertController: AlertController) { }
 
-  async alertContraseña() {
-    const alert = await this.alertController.create({
-      message: 'Las contraseñas deben tener al menos 8 caracteres y deben ser iguales',      
-    });
-  
-
-    await alert.present();
-  }
-  async alertCorreo() {
-    const alert = await this.alertController.create({
-      message: 'Ingrese un Correo Valido',      
-    });
-  
-
-    await alert.present();
-  }
-
   async alertReg() {
     const alert = await this.alertController.create({
-      message: 'Cuenta Registrada Correctamente',      
+      message: 'Cuenta registrada <br> correctamente',      
     });
-  
+    await alert.present();
+  }
 
+  async alertCamp() {
+    const alert = await this.alertController.create({
+      message: 'No debe dejar campos vacíos',      
+    });
     await alert.present();
   }
 
@@ -68,10 +57,17 @@ export class RegistroPage implements OnInit {
 
     let valido = true;
 
-    if (this.clave.length < 8){
-      this.msjClave1 = "La contraseña deben tener al menos 8 caracteres"
-      valido = false;
+    if(this.correo){
+      valido = this.validarCorreo();
     }
+
+    if(this.clave){
+      if (this.clave.length < 8){
+        this.msjClave1 = "La contraseña deben tener al menos 8 caracteres"
+        valido = false;
+      }
+    }
+    
     if(this.clave != this.clave2){
       this.msjClave2 = "Las contraseñas deben ser iguales"
       valido = false;
@@ -88,10 +84,6 @@ export class RegistroPage implements OnInit {
       this.msjClave5 = "La contraseña no debe tener espacios";
       valido = false;
     }
-    if (this.correo.indexOf('@', 0) == -1 || this.correo.indexOf('.', 0) == -1){
-      this.msjCorreo = "Ingrese un correo válido"
-      valido = false;
-    }
 
     if(/[" "]/.test(this.nombre)){
       this.msjNombre = "Nombre no debe contener espacios"
@@ -103,23 +95,44 @@ export class RegistroPage implements OnInit {
         valido = false;
     }
 
-    if (this.telefono.trim().length != 9) {
-      this.msjTelefono = "Número de teléfono debe ser de 9 dígitos";
+    if(this.telefono){
+      this.telefono2 = this.telefono.toString();
+      if (this.telefono2.length != 9 || this.telefono == null) {
+        this.msjTelefono = "Número de teléfono debe ser de 9 dígitos";
+        valido = false;
+      }
+    }
+
+    if(!this.correo || !this.nombre || !this.apellido || !this.clave || !this.clave2 || !this.telefono){
+      this.alertCamp();
       valido = false;
     }
 
-    if(!this.correo || !this.nombre || !this.apellido || !this.clave || !this.clave2){
-      this.msjCampos = "No debe dejar campos vacíos"
-      valido = false;
+    if(valido){
+      this.router.navigate(['menu/miCuenta']);
+      this.alertReg();
     }
 
+  }
+
+  validarCorreo() {
+ 
+    var valid = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+[.]+[a-zA-Z0-9-]/;
+  
+    if (this.correo.match(valid)) {
+      return true;
+    } else {
+      this.msjCorreo = "Ingrese un correo válido"
+      return false;
+    }
   }
 
   borrar(){
     this.correo = "";
     this.nombre = "";
     this.apellido = "";
-    this.telefono = "";
+    this.telefono = null;
+    this.telefono2 = "";
     this.clave = "";
     this.clave2 = "";
 

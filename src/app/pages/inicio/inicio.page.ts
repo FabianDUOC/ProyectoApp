@@ -75,7 +75,7 @@ export class InicioPage implements OnInit {
   login(){
     if(this.correo == "juan@contacto.cl"){
       this.usuario.nombre = "Juan";
-      this.usuario.apellido = "Perez";
+      this.usuario.apellido = "Pérez";
       this.usuario.correo = this.correo;
       this.usuario.telefono = "123456789";
       let navigationExtras: NavigationExtras = {
