@@ -86,6 +86,10 @@ const routes: Routes = [
     path: 'direccion-nv',
     loadChildren: () => import('./pages/direccion-nv/direccion-nv.module').then( m => m.DireccionNVPageModule)
   },
+  {
+    path: 'direccion-ver',
+    loadChildren: () => import('./pages/direccion-ver/direccion-ver.module').then( m => m.DireccionVerPageModule)
+  },
 
 
 

@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { NuevoViajePageRoutingModule } from './nuevo-viaje-routing.module';
-
+import {MatInputModule} from '@angular/material/input';
 import { NuevoViajePage } from './nuevo-viaje.page';
 
 @NgModule({
@@ -13,7 +13,8 @@ import { NuevoViajePage } from './nuevo-viaje.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    NuevoViajePageRoutingModule
+    NuevoViajePageRoutingModule,
+    MatInputModule,
   ],
   declarations: [NuevoViajePage]
 })
