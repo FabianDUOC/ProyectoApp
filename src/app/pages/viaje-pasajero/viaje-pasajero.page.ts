@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-viaje-pasajero',
@@ -8,7 +9,17 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class ViajePasajeroPage implements OnInit {
 
-  constructor(private router: Router) { }
+  conductor:string = "";
+  pasajeros:any;
+
+  constructor(private router: Router, private activedRouter: ActivatedRoute, private alertController: AlertController) { 
+    this.activedRouter.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.conductor = this.router.getCurrentNavigation().extras.state.c;
+        this.pasajeros = this.router.getCurrentNavigation().extras.state.p;
+      }
+    })
+  }
 
   // Seleccion del Menu Footer
   segmentChanged($event) {
@@ -20,6 +31,19 @@ export class ViajePasajeroPage implements OnInit {
       }
     }
     this.router.navigate(['menu/' + direccion],navigationExtras);
+  }
+
+  cancelarV(){
+    this.conductor = "";
+    this.pasajeros = null;
+    this.alert();
+  }
+
+  async alert() {
+    const alert = await this.alertController.create({
+      message: 'Viaje cancelado',      
+    });
+    await alert.present();
   }
 
   ngOnInit() {

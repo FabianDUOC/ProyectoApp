@@ -11,11 +11,7 @@ export class MenuPasajeroComponent implements OnInit {
   usuario:any;
 
   //Listas para Ver/Cancelar Viaje
-  conductor:any = [
-    {
-      nombre:"Pedro Gomez", 
-    }
-  ]
+  conductor:string = "Pedro Gomez";
 
   pasajeros:any = [
     {
