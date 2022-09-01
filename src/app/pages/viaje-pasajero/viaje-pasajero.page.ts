@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-viaje-pasajero',
@@ -12,7 +13,7 @@ export class ViajePasajeroPage implements OnInit {
   conductor:string = "";
   pasajeros:any;
 
-  constructor(private router: Router, private activedRouter: ActivatedRoute, private alertController: AlertController) { 
+  constructor(private router: Router, private activedRouter: ActivatedRoute, private alertController: AlertController,private location: Location) { 
     this.activedRouter.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.conductor = this.router.getCurrentNavigation().extras.state.c;
@@ -45,7 +46,9 @@ export class ViajePasajeroPage implements OnInit {
     });
     await alert.present();
   }
-
+  back(): void {
+    this.location.back()
+  }
   ngOnInit() {
   }
 
