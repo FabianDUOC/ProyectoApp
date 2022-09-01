@@ -10,7 +10,6 @@ img{
 }
 
 
-
 h1{
     text-align: center;
 }
@@ -57,3 +56,27 @@ img{
     animation: scale-in-center 1s cubic-bezier(.25, .46, .45, .94) both;
 
 }
+mat-form-field{
+width: 100% ;
+}
+mat-label{
+    font-size: 120%;
+}
+::ng-deep .mat-icon {
+    /*cambiar color icono*/
+    color: #ffff !important;
+   }
+    ::ng-deep .mat-form-field-label {
+        /*cambiar color label*/
+        color: #ffff !important;
+       }
+      
+    ::ng-deep.mat-form-field-underline {
+        /*cambiar color de linea inferior*/
+        background-color: #2dd36f !important;
+      } 
+      
+    ::ng-deep.mat-form-field-ripple {
+       /*cambiar color de linea inferior con focus*/
+       background-color: #2dd36f !important;
+      }

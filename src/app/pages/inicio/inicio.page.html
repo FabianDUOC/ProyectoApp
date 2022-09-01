@@ -7,15 +7,28 @@
 <ion-content class="gradiante">
   <img src="../../../assets/icon/Hermes.png"  alt="Hermes">
   <div class="container">
-  <ion-item>
+  <ion-item mode="md">
     <ion-label position="floating">Correo</ion-label>
     <ion-input [(ngModel)]="correo"></ion-input>
   </ion-item>
-  <ion-item>
+  
+<!--   <ion-item>
     <ion-label position="floating">Contraseña</ion-label>
-    <ion-input type="password" [(ngModel)]="clave"></ion-input>
-  </ion-item>
+    <ion-input [(ngModel)]="clave" [type]="hide ? 'password' : 'text'"></ion-input>
+    <ion-button ion-icon matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide"  color="transparent">
+      <ion-icon *ngIf="hide" name="eye-off-outline"></ion-icon>
+      <ion-icon *ngIf="!hide" name="eye-outline"></ion-icon>
+    </ion-button>
+  </ion-item> -->
+  <mat-form-field appearance="fill" [color]="warn">
+    <mat-label>Contraseña</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="clave" >
+    <button style="background-color: transparent;" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
 </div>
+
 <ion-grid>
   <ion-row>
     <ion-col size="0.5">
