@@ -20,17 +20,18 @@ export class InicioPage implements OnInit {
       apellido: "",
       correo:"",
       telefono:"",
+      imagen:"",
     }
   ]
 
-  autos:any = [
+/*   autos:any = [
     {
      patente:"",
      marca:"",
      modelo:"",
      asiento:"", 
     }
-  ]
+  ] */
 
 
   constructor(private router: Router, private alertController: AlertController) { }
@@ -78,6 +79,7 @@ export class InicioPage implements OnInit {
       this.usuario.apellido = "Pérez";
       this.usuario.correo = this.correo;
       this.usuario.telefono = "123456789";
+      this.usuario.imagen = "../../../assets/perfilEjemplo.jpg";
       let navigationExtras: NavigationExtras = {
         state:{
           u: this.usuario,

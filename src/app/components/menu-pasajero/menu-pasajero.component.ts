@@ -12,13 +12,16 @@ export class MenuPasajeroComponent implements OnInit {
 
   //Listas para Ver/Cancelar Viaje
   conductor:string = "Pedro Gomez";
+  conductorImagen:any = "../../../assets/perfil2.jpg";
 
   pasajeros:any = [
     {
-      nombre:"Guillermo Astudillo", 
+      nombre:"Guillermo Astudillo",
+      imagen:"../../../assets/profile_.png",
     },
     {
-      nombre:"Juan Pérez", 
+      nombre:"Juan Pérez",
+      imagen:"../../../assets/perfilEjemplo.jpg", 
     },
   ]
 
@@ -34,6 +37,7 @@ export class MenuPasajeroComponent implements OnInit {
     let navigationExtras: NavigationExtras = {
       state:{
         c: this.conductor,
+        ic: this.conductorImagen,
         p: this.pasajeros,
       }
     }

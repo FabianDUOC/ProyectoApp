@@ -11,6 +11,7 @@ import { Location } from '@angular/common'
 export class ViajePasajeroPage implements OnInit {
 
   conductor:string = "";
+  imagenConductor:any;
   pasajeros:any;
 
   hora:string = "15:40"
@@ -21,6 +22,7 @@ export class ViajePasajeroPage implements OnInit {
     this.activedRouter.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.conductor = this.router.getCurrentNavigation().extras.state.c;
+        this.imagenConductor = this.router.getCurrentNavigation().extras.state.ic;
         this.pasajeros = this.router.getCurrentNavigation().extras.state.p;
       }
     })

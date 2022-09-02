@@ -18,7 +18,8 @@ export class BuscarViajePage implements OnInit {
       destino:"Rene's Farm3",
       precio:"2000",
       asientos:"1/3",
-      hora: "17:40", 
+      hora: "17:40",
+      imagen: "../../../assets/perfil6.png", 
     }
   ]
 
@@ -28,7 +29,8 @@ export class BuscarViajePage implements OnInit {
       destino:"Rene's Farm",
       precio:"2000",
       asientos:"2/3",
-      hora: "15:40", 
+      hora: "15:40",
+      imagen: "../../../assets/perfil2.jpg", 
     },
     {
       nombre:"Pepe",
@@ -36,6 +38,7 @@ export class BuscarViajePage implements OnInit {
       precio:"2600",
       asientos:"1/4",
       hora: "20:40",
+      imagen: "../../../assets/profile_.png",
     }
   ]
 
@@ -45,7 +48,8 @@ export class BuscarViajePage implements OnInit {
       destino:"Rene's Farm4",
       precio:"2700",
       asientos:"1/4",
-      hora: "19:00", 
+      hora: "19:00",
+      imagen: "../../../assets/campo.jpg", 
     }
   ]
 

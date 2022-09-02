@@ -1,11 +1,12 @@
 <ion-content class="gradiante">
   <div style="text-align: center; margin-top: 2vh;">
     <a [routerLink]="['/#']">
-      <img class="imgRedonda" src="../../../assets/profile_.png" alt="">
+      <!-- <img class="imgRedonda" src="../../../assets/profile_.png" alt=""> -->
+      <img class="imgRedonda" src="{{ usuario.imagen }}" alt="">
     </a>
   </div>
   <h1 class="ion-text-center satisfy" >¡Bienvenido!</h1>
-  <p class="ion-text-center">{{ usuario.nombre }} {{ usuario.apellido }}</p>
+  <p class="ion-text-center">{{ usuario.nombre}} {{ usuario.apellido }}</p>
   <p class="ion-text-center">Correo: {{ usuario.correo }}</p>
   <p class="ion-text-center">Número Contacto: {{ usuario.telefono }}</p>
   <ion-grid>
