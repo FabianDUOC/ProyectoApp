@@ -11,6 +11,11 @@
     <h1 class="satisfy">Editar Auto</h1>
   </div>
   <div class="container">
+    <img *ngIf="noImagen" src="../../../assets/ioniq.jpg" alt="">
+    <img *ngIf="imagen" [src]="imagen" alt="">
+    <ion-input  (change)="onChange($event)" type="file" accept="image/png, image/jpeg" ></ion-input>
+  </div>
+  <div class="container">
   <ion-item>
     <ion-label position="floating">Marca</ion-label>
     <ion-input [(ngModel)]="marca"></ion-input>
@@ -26,7 +31,6 @@
     <ion-input [(ngModel)]="patente"></ion-input>
   </ion-item>
   <p class="alerta" *ngIf = "msjPatente"> {{ msjPatente }} </p>
-  <p class="alerta" *ngIf = "msjCampos"> {{ msjCampos }} </p>
 </div>
   <ion-grid>
     <ion-row>

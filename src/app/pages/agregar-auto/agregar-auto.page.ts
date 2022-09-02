@@ -33,12 +33,17 @@ export class AgregarAutoPage implements OnInit {
       }
 
 
-  async alertReg() {
+  async alertEdit() {
     const alert = await this.alertController.create({
-      message: 'Auto Editado Correctamente',      
+      message: 'Auto agregado correctamente',      
     });
-  
+    await alert.present();
+  }
 
+  async alertCamp() {
+    const alert = await this.alertController.create({
+      message: 'No debe dejar campos vacíos',      
+    });
     await alert.present();
   }
 
@@ -51,22 +56,20 @@ export class AgregarAutoPage implements OnInit {
     let valido = true;
 
     if(!this.marca || !this.modelo || !this.patente){
-      this.msjCampos = "No debe dejar campos vacíos"
+      this.alertCamp();
       valido = false;
     }
-    if(this.patente.indexOf('-', 0) == -1){
-      //this.alertCorreo();
-      this.msjPatente = "Ingrese una patente valida"
-      valido = false;
-      }
+
     if(valido){
         this.router.navigate(['/mis-autos'])
+        this.alertEdit();
       }
   }
   borrar(){
     this.patente = "";
     this.modelo = "";
     this.marca = "";
+
     this.msjMarca = "";
     this.msjModelo = "";
     this.msjPatente = "";

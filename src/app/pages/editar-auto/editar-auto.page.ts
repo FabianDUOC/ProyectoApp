@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -9,16 +9,35 @@ import { AlertController } from '@ionic/angular';
 })
 export class EditarAutoPage implements OnInit {
 
+  autos:any;
+
   marca: string = "";
   modelo: string = "";
   patente: string = "";
+  imagenAuto:any;
 
   msjMarca: string = "";
   msjModelo: string = "";
   msjPatente: string = "";
   msjCampos: string = "";
 
-  constructor(private router: Router, private alertController: AlertController) { }
+  imagen: any;
+  noImagen: boolean = true;
+
+  constructor(private router: Router, private activedRouter: ActivatedRoute, private alertController: AlertController) { 
+    this.activedRouter.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.autos = this.router.getCurrentNavigation().extras.state.auto;
+
+        this.marca = this.autos[0].marca;
+        this.modelo = this.autos[0].modelo;
+        this.patente = this.autos[0].patente;
+        this.imagenAuto = this.autos[0].imagen;
+
+        
+      }
+    })
+  }
 
       // Seleccion del Menu Footer
       segmentChanged($event) {
@@ -33,9 +52,18 @@ export class EditarAutoPage implements OnInit {
       }
 
 
-  async alertReg() {
+  async alertEdit() {
     const alert = await this.alertController.create({
-      message: 'Auto Editado Correctamente',      
+      message: 'Auto editado correctamente',      
+    });
+  
+
+    await alert.present();
+  }
+
+  async alertCamp() {
+    const alert = await this.alertController.create({
+      message: 'Excepto la imagen, no debe dejar campos vacíos',      
     });
   
 
@@ -51,27 +79,44 @@ export class EditarAutoPage implements OnInit {
     let valido = true;
 
     if(!this.marca || !this.modelo || !this.patente){
-      this.msjCampos = "No debe dejar campos vacíos"
+      this.alertCamp();
       valido = false;
     }
-    if(this.patente.indexOf('-', 0) == -1){
-      //this.alertCorreo();
-      this.msjPatente = "Ingrese una patente valida"
-      valido = false;
-      }
+ 
     if(valido){
         this.router.navigate(['/mis-autos'])
+        this.alertEdit();
       }
   }
+
   borrar(){
     this.patente = "";
     this.modelo = "";
     this.marca = "";
+
     this.msjMarca = "";
     this.msjModelo = "";
     this.msjPatente = "";
     this.msjCampos = "";
   }
+
+    // Cambiar Imagen Perfil
+    onChange(event) {
+      var reader = new FileReader();
+  
+      reader.onload = (event: any) => {
+        this.imagen = event.target.result;
+        console.log("imagen cargada");
+        this.noImagen = false;
+      };
+  
+      reader.onerror = (event: any) => {
+        console.log("El archivo no se pudo cargar " + event.target.error.code);
+      };
+  
+      reader.readAsDataURL(event.target.files[0]);
+  
+    }
 
   ngOnInit() {   
   }

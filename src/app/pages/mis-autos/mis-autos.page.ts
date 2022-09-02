@@ -44,6 +44,15 @@ export class MisAutosPage implements OnInit {
     await alert.present();
   }
 
+  irEditar(){
+    let navigationExtras: NavigationExtras = {
+      state:{
+        auto: this.autos,
+      } 
+    }
+    this.router.navigate(['/editar-auto'], navigationExtras);
+  }
+
   ngOnInit() {
   }
 

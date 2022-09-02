@@ -61,7 +61,7 @@ export class RecuperarClavePage implements OnInit {
 
   borrar(){
     this.correo = "";
-    this.msjCampos = "";
+    this.msjCorreo = "";
   }
 
   ngOnInit() {   

@@ -13,6 +13,10 @@ export class ViajePasajeroPage implements OnInit {
   conductor:string = "";
   pasajeros:any;
 
+  hora:string = "15:40"
+
+  destino:string = "Recoleta 1107";
+
   constructor(private router: Router, private activedRouter: ActivatedRoute, private alertController: AlertController,private location: Location) { 
     this.activedRouter.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
@@ -37,6 +41,10 @@ export class ViajePasajeroPage implements OnInit {
   cancelarV(){
     this.conductor = "";
     this.pasajeros = null;
+    
+    this.hora = ""
+    this.destino= "";
+
     this.alert();
   }
 

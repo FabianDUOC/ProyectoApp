@@ -26,14 +26,13 @@
     <ion-input [(ngModel)]="patente"></ion-input>
   </ion-item>
   <p class="alerta" *ngIf = "msjPatente"> {{ msjPatente }} </p>
-  <p class="alerta" *ngIf = "msjCampos"> {{ msjCampos }} </p>
 </div>
   <ion-grid>
     <ion-row>
       <ion-col size="0.5">
       </ion-col>
       <ion-col size="11">
-        <ion-button color="primary" class="ion-margin-bottom" expand="block" shape="round" (click)="validarEdit()">Editar</ion-button>
+        <ion-button color="primary" class="ion-margin-bottom" expand="block" shape="round" (click)="validarEdit()">Agregar</ion-button>
         <ion-button color="medium" class="ion-margin-bottom" expand="block" shape="round" (click)="borrar()">Borrar</ion-button>
       </ion-col>
       <ion-col size="0.5">
