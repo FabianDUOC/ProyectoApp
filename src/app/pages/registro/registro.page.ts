@@ -36,6 +36,7 @@ export class RegistroPage implements OnInit {
       apellido: "",
       correo:"",
       telefono:"",
+      imagen:"",
     }
   ]
 
@@ -124,6 +125,7 @@ export class RegistroPage implements OnInit {
       this.usuario.apellido = this.apellido;
       this.usuario.correo = this.correo;
       this.usuario.telefono = this.telefono;
+      this.usuario.imagen = "../../../assets/profile_.png";
       let navigationExtras: NavigationExtras = {
         state:{
           u: this.usuario,
