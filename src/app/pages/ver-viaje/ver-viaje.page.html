@@ -32,7 +32,7 @@
                 Destino: {{ datos.destino }}
               </ion-row>
               <ion-row>
-                Precio: {{ datos.precio }}
+                Precio: {{ datos.precio | currency :'USD':'symbol-narrow':'1.0' }}
               </ion-row>
               <ion-row>
                 Asientos: {{ datos.asientos }}

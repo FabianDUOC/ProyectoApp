@@ -5,6 +5,13 @@
 @import url("https://fonts.googleapis.com/css?family=Satisfy");
 :root {
   /** general **/
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
   .satisfy{
     font-family: 'Satisfy';
     font-size: 250%;
