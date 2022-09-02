@@ -9,7 +9,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class NuevoViajePage implements OnInit {
 
-
+  hora:string ="";
 
   msjCampos: string = "";
   sede: string = "";
@@ -46,19 +46,36 @@ export class NuevoViajePage implements OnInit {
     let valido = true;
 
     if(!this.sede || !this.autos || !this.asientos){
-      this.msjCampos = "No debe dejar campos vacíos"
+      this.presentAlert();
       valido = false;
     }
     if(valido){
-      this.router.navigate(['/menu-conductor'])
+      this.router.navigate(['/menu/menuConductor'])
+      this.alertEdit();
     }
   }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      message: "No debe dejar campos vacíos",      
+    });
+    await alert.present();
+  }
+
+  async alertEdit() {
+    const alert = await this.alertController.create({
+      message: "Viaje creado correctamente",      
+    });
+    await alert.present();
+  }
+
 
   borrar(){
     this.sede = "";
     this.autos = "";
     this.asientos = null;
     this.msjCampos = "";
+    this.hora = "";
   }
 
   ngOnInit() {   

@@ -36,6 +36,10 @@
             <ion-label position="floating">Dirección destino</ion-label>
             <ion-input [(ngModel)]="direccion"></ion-input>
           </ion-item>
+          <ion-item>
+            <ion-label position="floating">Hora de salida</ion-label>
+            <ion-input [(ngModel)]="hora"></ion-input>
+          </ion-item>
       </ion-col>
       <ion-col size="3">
         <ion-button shape="round" [routerLink]="['/direccion-nv']">
@@ -43,16 +47,17 @@
         </ion-button>
       </ion-col>
     </ion-row>
+    <ion-item>
+      <ion-label position="floating">Asientos Disponibles</ion-label>
+      <ion-input type="number" [(ngModel)]="asientos"></ion-input>
+    </ion-item>
+    <mat-form-field appearance="fill" floatLabel="always">
+      <mat-label>Precio Por Cada Asiento</mat-label>
+      <input matInput type="number" min="0" max="50000" class="example-right-align">
+      <span matPrefix>$&nbsp;</span>
+    </mat-form-field>
 </ion-grid>
-  <ion-item>
-    <ion-label position="floating">Asientos Disponibles</ion-label>
-    <ion-input type="number" [(ngModel)]="asientos"></ion-input>
-  </ion-item>
-  <mat-form-field appearance="fill" floatLabel="always">
-    <mat-label>Precio Por Cada Asiento</mat-label>
-    <input matInput type="number" min="0" max="50000" class="example-right-align">
-    <span matPrefix>$&nbsp;</span>
-  </mat-form-field>
+
   <p class="alerta" *ngIf = "msjCampos"> {{ msjCampos }} </p>
 </div>
   <ion-grid>

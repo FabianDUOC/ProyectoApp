@@ -74,19 +74,24 @@ export class InicioPage implements OnInit {
 
 
   login(){
-    if(this.correo == "juan@contacto.cl"){
-      this.usuario.nombre = "Juan";
-      this.usuario.apellido = "Pérez";
-      this.usuario.correo = this.correo;
-      this.usuario.telefono = "123456789";
-      this.usuario.imagen = "../../../assets/perfilEjemplo.jpg";
-      let navigationExtras: NavigationExtras = {
-        state:{
-          u: this.usuario,
+    if(this.correo == "juan@contacto.cl" || this.correo == "Juan@contacto.cl"){
+      if(this.clave == "1RenesHouse"){
+        this.usuario.nombre = "Juan";
+        this.usuario.apellido = "Pérez";
+        this.usuario.correo = "juan@contacto.cl";
+        this.usuario.telefono = "123456789";
+        this.usuario.imagen = "../../../assets/perfilEjemplo.jpg";
+        let navigationExtras: NavigationExtras = {
+          state:{
+            u: this.usuario,
+          }
         }
+        this.router.navigate(['/menu'], navigationExtras);
       }
-      this.router.navigate(['/menu'], navigationExtras);
-
+      else{
+        this.mensaje = "Ingrese un correo y/o contraseña válidos."
+        this.presentAlert();
+      }
     }
     else{
       this.mensaje = "Ingrese un correo y/o contraseña válidos."
